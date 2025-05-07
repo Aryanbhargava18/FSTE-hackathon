@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Transportation System Behavior Over Time</text>
+  
+  <!-- Graph frame -->
+  <rect x="50" y="50" width="700" height="400" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- X axis -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="black" stroke-width="2"/>
+  <!-- Y axis -->
+  <line x1="50" y1="50" x2="50" y2="450" stroke="black" stroke-width="2"/>
+  
+  <!-- X axis labels -->
+  <text x="400" y="485" font-family="Arial" font-size="16" text-anchor="middle">Time (Years)</text>
+  <text x="50" y="470" font-family="Arial" font-size="12" text-anchor="middle">0</text>
+  <text x="190" y="470" font-family="Arial" font-size="12" text-anchor="middle">5</text>
+  <text x="330" y="470" font-family="Arial" font-size="12" text-anchor="middle">10</text>
+  <text x="470" y="470" font-family="Arial" font-size="12" text-anchor="middle">15</text>
+  <text x="610" y="470" font-family="Arial" font-size="12" text-anchor="middle">20</text>
+  <text x="750" y="470" font-family="Arial" font-size="12" text-anchor="middle">25</text>
+  
+  <!-- Y axis labels -->
+  <text x="30" y="250" font-family="Arial" font-size="16" text-anchor="middle" transform="rotate(-90, 30, 250)">Passengers/Infrastructure Level</text>
+  
+  <!-- Grid lines X -->
+  <line x1="190" y1="50" x2="190" y2="450" stroke="#ddd" stroke-width="1"/>
+  <line x1="330" y1="50" x2="330" y2="450" stroke="#ddd" stroke-width="1"/>
+  <line x1="470" y1="50" x2="470" y2="450" stroke="#ddd" stroke-width="1"/>
+  <line x1="610" y1="50" x2="610" y2="450" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Grid lines Y -->
+  <line x1="50" y1="130" x2="750" y2="130" stroke="#ddd" stroke-width="1"/>
+  <line x1="50" y1="210" x2="750" y2="210" stroke="#ddd" stroke-width="1"/>
+  <line x1="50" y1="290" x2="750" y2="290" stroke="#ddd" stroke-width="1"/>
+  <line x1="50" y1="370" x2="750" y2="370" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Air Passengers (blue) -->
+  <path d="M50,300 C120,290 160,270 190,250 C220,230 260,200 330,180 C400,160 450,150 470,150 C490,150 530,160 610,170 C690,180 720,190 750,200" stroke="#3366CC" stroke-width="3" fill="none"/>
+  
+  <!-- Rail Passengers (red) -->  
+  <path d="M50,320 C120,325 160,327 190,330 C220,335 260,350 330,350 C400,350 450,340 470,320 C490,300 530,260 610,230 C690,210 720,200 750,190" stroke="#CC3366" stroke-width="3" fill="none"/>
+  
+  <!-- Air Network (light blue) -->
+  <path d="M50,310 C120,300 160,280 190,260 C220,240 260,210 330,190 C400,170 450,155 470,155 C490,155 530,165 610,175 C690,185 720,195 750,205" stroke="#66AADD" stroke-width="3" stroke-dasharray="5,3" fill="none"/>
+  
+  <!-- Rail Infrastructure (light red) -->
+  <path d="M50,330 C120,330 160,332 190,335 C220,340 260,345 330,345 C400,345 450,335 470,315 C490,295 530,255 610,225 C690,205 720,195 750,185" stroke="#DD66AA" stroke-width="3" stroke-dasharray="5,3" fill="none"/>
+  
+  <!-- Economic Development (green) -->
+  <path d="M50,350 C120,345 160,340 190,335 C220,328 260,310 330,290 C400,270 450,240 470,225 C490,210 530,185 610,160 C690,140 720,130 750,120" stroke="#33AA66" stroke-width="3" fill="none"/>
+  
+  <!-- Policy Intervention Marker -->
+  <line x1="330" y1="50" x2="330" y2="450" stroke="#FF6600" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="330" y="65" font-family="Arial" font-size="12" text-anchor="middle" fill="#FF6600">Policy Intervention</text>
+  
+  <!-- Legend -->
+  <rect x="550" y="500" width="200" height="90" fill="white" stroke="black"/>
+  <line x1="560" y1="515" x2="590" y2="515" stroke="#3366CC" stroke-width="3"/>
+  <text x="600" y="520" font-family="Arial" font-size="12">Air Passengers</text>
+  
+  <line x1="560" y1="535" x2="590" y2="535" stroke="#CC3366" stroke-width="3"/>
+  <text x="600" y="540" font-family="Arial" font-size="12">Rail Passengers</text>
+  
+  <line x1="560" y1="555" x2="590" y2="555" stroke="#66AADD" stroke-width="3" stroke-dasharray="5,3"/>
+  <text x="600" y="560" font-family="Arial" font-size="12">Air Network</text>
+  
+  <line x1="560" y1="575" x2="590" y2="575" stroke="#DD66AA" stroke-width="3" stroke-dasharray="5,3"/>
+  <text x="600" y="580" font-family="Arial" font-size="12">Rail Infrastructure</text>
+  
+  <line x1="560" y1="595" x2="590" y2="595" stroke="#33AA66" stroke-width="3"/>
+  <text x="600" y="600" font-family="Arial" font-size="12">Economic Development</text>
+</svg>
