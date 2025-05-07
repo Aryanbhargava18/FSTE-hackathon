@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+import causallImg from "./assets/causall.png";
+import imageImg from "./assets/image.png";
+import transportSvg from "./assets/transport_system_simulation.svg";
+
+
 // Glassmorphism Card
 function GlassCard({ children, style }) {
   return (
@@ -142,6 +147,7 @@ export default function App() {
           Problem: Why is air travel growing rapidly while rail travel remains underutilized or inconvenient in tier-2 and 3 cities?
         </div>
       </header>
+      
       {/* Navigation */}
       <nav style={{
         display: "flex",
@@ -153,12 +159,15 @@ export default function App() {
         position: "sticky",
         top: 0,
         zIndex: 10,
-        boxShadow: "0 2px 16px rgba(0,0,0,0.07)"
+        boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+        flexWrap: "wrap"
       }}>
         {[
           ["#data", "Real-time Data"],
           ["#problem", "Problem & Research"],
           ["#cld", "CLD Diagram & Narrative"],
+          ["#stockflow", "Stock Flow"],
+          ["#bot", "BOT Analysis"],
           ["#eps", "EPS Analysis"],
           ["#leverage", "Leverage Points"],
           ["#archetypes", "Archetypes"],
@@ -167,6 +176,7 @@ export default function App() {
           <NavButton key={href} href={href}>{label}</NavButton>
         ))}
       </nav>
+      
       {/* Main Content */}
       <main style={{
         maxWidth: 1080,
@@ -197,12 +207,13 @@ export default function App() {
             </div>
           </GlassCard>
         </section>
+        
         {/* Problem Framing & Research */}
         <section id="problem">
           <GlassCard>
             <h2 style={sectionTitleStyle}>Problem Framing & Research</h2>
             <p>
-              India’s domestic air travel is booming, especially from tier-2 and tier-3 cities, with monthly passenger numbers surpassing 15 million in 2024. Meanwhile, rail travel in these regions remains stagnant or underutilized, despite Indian Railways’ vast network. The government’s UDAN scheme and rising incomes have made flying more accessible, but rail modernization lags behind. This imbalance affects regional connectivity, equitable growth, and sustainable transportation-key systemic issues for India’s future.
+              India's domestic air travel is booming, especially from tier-2 and tier-3 cities, with monthly passenger numbers surpassing 15 million in 2024. Meanwhile, rail travel in these regions remains stagnant or underutilized, despite Indian Railways' vast network. The government's UDAN scheme and rising incomes have made flying more accessible, but rail modernization lags behind. This imbalance affects regional connectivity, equitable growth, and sustainable transportation-key systemic issues for India's future.
             </p>
             <ul>
               <li>Defined the problem using recent data and reports.</li>
@@ -215,90 +226,94 @@ export default function App() {
             </ul>
           </GlassCard>
         </section>
+        
         {/* CLD Diagram & Narrative */}
-<section id="cld">
-  <GlassCard>
-    <h2 style={sectionTitleStyle}>CLD Diagram</h2>
-    <div style={{
-      background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
-      borderRadius: "18px",
-      padding: "18px 14px",
-      marginBottom: "18px",
-      boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
-      border: "1.5px solid #bfe2f8",
-      textAlign: "center"
-    }}>
-      <img 
-        src="src/assets/image.png" 
-        alt="Causal Loop Diagram for Air and Rail Transportation Systems" 
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          borderRadius: "12px"
-        }} 
-      />
-    </div>
-    <p>
-      The CLD shows how government policy and disposable income drive both air and rail growth, but feedback loops reinforce air travel's success (e.g., more flights → higher preference → more investment), while rail suffers from underinvestment and declining perception.
-    </p>
-  </GlassCard> 
-  {/* Stock Flow Diagram */}
-<section id="stockflow">
-  <GlassCard>
-    <h2 style={sectionTitleStyle}>Stock Flow Diagram</h2>
-    <div style={{
-      background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
-      borderRadius: "18px",
-      padding: "18px 14px",
-      marginBottom: "18px",
-      boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
-      border: "1.5px solid #bfe2f8",
-      textAlign: "center"
-    }}>
-      <img 
-        src="src/assets/causall.png" 
-        alt="Stock Flow Diagram for Transportation System" 
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          borderRadius: "12px"
-        }}
-      />
-    </div>
-    <p>
-      The Stock Flow Diagram quantifies relationships between five key stocks: Air Passengers, Rail Passengers, Air Network, Rail Infrastructure, and Economic Development. Policy interventions at year 10 shift investment priorities from air to rail transportation, affecting the system's dynamic behavior.
-    </p>
-  </GlassCard>
-</section>
-{/* Behavior Over Time Graph */}
-<section id="bot">
-  <GlassCard>
-    <h2 style={sectionTitleStyle}>Behavior Over Time Analysis</h2>
-    <div style={{
-      background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
-      borderRadius: "18px",
-      padding: "18px 14px",
-      marginBottom: "18px",
-      boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
-      border: "1.5px solid #bfe2f8",
-      textAlign: "center"
-    }}>
-      <img 
-        src="src/assets/transport_system_simulation (1).svg" 
-        alt="Behavior Over Time Graph for Transportation System" 
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          borderRadius: "12px"
-        }}
-      />
-    </div>
-    <p>
-      The simulation over 25 years shows three key dynamics: (1) Air passengers initially dominate but rail surpasses air around year 17 after policy intervention, (2) Rail infrastructure shows accelerated S-shaped growth while air network expansion flattens, and (3) Economic development grows continuously with increased rate after policy implementation, demonstrating benefits from balanced transportation investment.
-    </p>
-  </GlassCard>
-</section>
-</section>
+        <section id="cld">
+          <GlassCard>
+            <h2 style={sectionTitleStyle}>CLD Diagram</h2>
+            <div style={{
+              background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
+              borderRadius: "18px",
+              padding: "18px 14px",
+              marginBottom: "18px",
+              boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
+              border: "1.5px solid #bfe2f8",
+              textAlign: "center"
+            }}>
+              <img 
+                src={imageImg}
+                alt="Causal Loop Diagram for Air and Rail Transportation Systems" 
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "12px"
+                }} 
+              />
+            </div>
+            <p>
+              The CLD shows how government policy and disposable income drive both air and rail growth, but feedback loops reinforce air travel's success (e.g., more flights → higher preference → more investment), while rail suffers from underinvestment and declining perception.
+            </p>
+          </GlassCard>
+        </section>
+         
+        {/* Stock Flow Diagram */}
+        <section id="stockflow">
+          <GlassCard>
+            <h2 style={sectionTitleStyle}>Stock Flow Diagram</h2>
+            <div style={{
+              background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
+              borderRadius: "18px",
+              padding: "18px 14px",
+              marginBottom: "18px",
+              boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
+              border: "1.5px solid #bfe2f8",
+              textAlign: "center"
+            }}>
+              <img 
+                src={causallImg}
+                alt="Stock Flow Diagram for Transportation System" 
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "12px"
+                }}
+              />
+            </div>
+            <p>
+              The Stock Flow Diagram quantifies relationships between five key stocks: Air Passengers, Rail Passengers, Air Network, Rail Infrastructure, and Economic Development. Policy interventions at year 10 shift investment priorities from air to rail transportation, affecting the system's dynamic behavior.
+            </p>
+          </GlassCard>
+        </section>
+        
+        {/* Behavior Over Time Graph */}
+        <section id="bot">
+          <GlassCard>
+            <h2 style={sectionTitleStyle}>Behavior Over Time Analysis</h2>
+            <div style={{
+              background: "linear-gradient(120deg,#e0eafc 0%,#cfdef3 100%)",
+              borderRadius: "18px",
+              padding: "18px 14px",
+              marginBottom: "18px",
+              boxShadow: "0 2px 12px rgba(31,38,135,0.08)",
+              border: "1.5px solid #bfe2f8",
+              textAlign: "center"
+            }}>
+              <img 
+                src={transportSvg}
+                alt="Behavior Over Time Graph for Transportation System"  
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "12px"
+                }}
+              />
+            </div>
+            <p>
+              The simulation over 25 years shows three key dynamics: (1) Air passengers initially dominate but rail surpasses air around year 17 after policy intervention, (2) Rail infrastructure shows accelerated S-shaped growth while air network expansion flattens, and (3) Economic development grows continuously with increased rate after policy implementation, demonstrating benefits from balanced transportation investment.
+            </p>
+          </GlassCard>
+        </section>
+        
         {/* EPS Analysis */}
         <section id="eps">
           <GlassCard>
@@ -319,6 +334,7 @@ export default function App() {
             </p>
           </GlassCard>
         </section>
+        
         {/* Leverage Points */}
         <section id="leverage">
           <GlassCard>
@@ -335,40 +351,43 @@ export default function App() {
             />
           </GlassCard>
         </section>
+        
         {/* Archetypes */}
         <section id="archetypes">
           <GlassCard>
             <h2 style={sectionTitleStyle}>System Archetypes</h2>
             <p>
-              <strong>Archetype Identified:</strong> “Success to the Successful” – As air travel becomes more convenient and prestigious, it attracts more investment and passengers, while railways in these cities receive less attention and resources, causing further decline.
+              <strong>Archetype Identified:</strong> "Success to the Successful" – As air travel becomes more convenient and prestigious, it attracts more investment and passengers, while railways in these cities receive less attention and resources, causing further decline.
             </p>
             <p>
-              <strong>Effect on System Dynamics:</strong> This creates a reinforcing loop where air travel’s growth accelerates, and rail stagnates, making it harder to reverse the trend without targeted interventions.
+              <strong>Effect on System Dynamics:</strong> This creates a reinforcing loop where air travel's growth accelerates, and rail stagnates, making it harder to reverse the trend without targeted interventions.
             </p>
           </GlassCard>
         </section>
+        
         {/* Insights & References */}
         <section id="insights">
           <GlassCard>
             <h2 style={sectionTitleStyle}>Additional Insights & References</h2>
             <ul>
-              <li>Digital adoption in smaller cities is high; leveraging this for smart rail solutions (apps, real-time updates) could boost rail’s appeal.</li>
-              <li>Environmental concerns: Air travel has a higher carbon footprint; improving rail could support India’s sustainability goals.</li>
-              <li>The “prestige” factor of flying is strong among first-time travelers; railways need to rebrand for aspirational value.</li>
+              <li>Digital adoption in smaller cities is high; leveraging this for smart rail solutions (apps, real-time updates) could boost rail's appeal.</li>
+              <li>Environmental concerns: Air travel has a higher carbon footprint; improving rail could support India's sustainability goals.</li>
+              <li>The "prestige" factor of flying is strong among first-time travelers; railways need to rebrand for aspirational value.</li>
             </ul>
             <h3>References</h3>
             <ul>
               <li>Ministry of Civil Aviation, UDAN Scheme Reports (2023-2025)</li>
-              <li>ICRA, “Domestic Air Passenger Growth” (2024)</li>
-              <li>Business Standard, “Tier-2, 3 cities drive air travel growth” (2024)</li>
-              <li>Economic Times, “Rail travel trends in smaller cities” (2024)</li>
-              <li>Donella Meadows, “Thinking in Systems” (2008)</li>
-              <li>NASSCOM, “Tech Talent in Tier-2/3 Cities” (2023)</li>
+              <li>ICRA, "Domestic Air Passenger Growth" (2024)</li>
+              <li>Business Standard, "Tier-2, 3 cities drive air travel growth" (2024)</li>
+              <li>Economic Times, "Rail travel trends in smaller cities" (2024)</li>
+              <li>Donella Meadows, "Thinking in Systems" (2008)</li>
+              <li>NASSCOM, "Tech Talent in Tier-2/3 Cities" (2023)</li>
               <li>Indian Railways Annual Report (2023-24)</li>
             </ul>
           </GlassCard>
         </section>
       </main>
+      
       <footer style={{
         textAlign: "center",
         color: "#555",
@@ -377,6 +396,7 @@ export default function App() {
         paddingBottom: 12,
         opacity: 0.8
       }}>
+        ©Systems Thinking - Group 92
       </footer>
     </div>
   );
@@ -389,4 +409,3 @@ const sectionTitleStyle = {
   marginBottom: "0.7em",
   letterSpacing: "0.5px"
 };
- 
