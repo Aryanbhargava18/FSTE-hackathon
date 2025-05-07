@@ -377,7 +377,6 @@ export default function App() {
         paddingBottom: 12,
         opacity: 0.8
       }}>
-        © 2025 SkyRail Innovators – Systems Thinking Hackathon Platform
       </footer>
     </div>
   );
